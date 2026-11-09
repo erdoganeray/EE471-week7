@@ -6,7 +6,8 @@ Training image classifiers with PyTorch, optimizing their hyperparameters, and s
 | Path | Content |
 |---|---|
 | `FashionMNIST/` | Garment classifier: training, hyperparameter optimization, two Cog model containers, Compose file, Postman collection |
-| `CIFAR10/` | CIFAR10 classifier, same structure *(in progress)* |
+| `CIFAR10/` | CIFAR10 classifier, same structure |
+| `REPORT.md` | One-page report on the performance of both classifiers |
 | `web/` | The website (Week 6's cat classifier, reworked): classifies an image with the baseline and the optimized model side by side. Shared by both classifiers |
 | `postman/make_request.py` | Turns an image into the JSON body that Cog expects, for sending from Postman |
 
@@ -173,3 +174,75 @@ docker compose -f FashionMNIST/compose.yaml logs -f                # all three c
 | Weakest class | Sandal 3.1%, Shirt 6.6% | Shirt 72.5% |
 
 40 Optuna trials (18 completed, 22 pruned) took about 10 minutes on an RTX 3050 Ti; the final model trains in 30 seconds.
+
+## CIFAR10 classifier
+
+Same steps and the same file layout as FashionMNIST, in `CIFAR10/`. The website is the same one, started with
+`CLASSIFIER=cifar10`, on other ports so both classifiers can run at the same time.
+
+### Train, optimize, build, run
+
+```bash
+cd CIFAR10/model
+python train.py          # baseline: the tutorial network and hyperparameters
+python tune.py 40        # Optuna, then the optimized model
+python export_samples.py # one test image per class -> CIFAR10/test-images/
+cog build -f cog.baseline.yaml -t cifar10-baseline
+cog build -f cog.optimized.yaml -t cifar10-optimized
+cd ../..
+docker compose -f CIFAR10/compose.yaml up --build
+```
+
+Open http://localhost:8001.
+
+The baseline is the network of the PyTorch [Training a classifier](https://pytorch.org/tutorials/beginner/blitz/cifar10_tutorial.html)
+tutorial: two convolutional layers (6 and 16 filters, 5×5) with max pooling and three fully connected layers (120, 84, 10),
+inputs normalized to −1..1, SGD with learning rate 0.001 and momentum 0.9, batch size 4, 2 epochs.
+
+`tune.py` searches like the tutorial's [Ray Tune version](https://pytorch.org/tutorials/beginner/hyperparameter_tuning_tutorial.html)
+(which tunes `l1`, `l2`, the learning rate and the batch size), with a few more hyperparameters:
+
+| Hyperparameter | Search range |
+|---|---|
+| Convolution filters | conv1: 16, 32, 64 · conv2: 32, 64, 128 |
+| Fully connected layers | fc1: 128, 256, 512 · fc2: 64, 128, 256 |
+| Dropout | 0–0.5 |
+| Optimizer | SGD (learning rate 0.001–0.1, momentum 0.5–0.95) or Adam (learning rate 0.0001–0.01) |
+| Weight decay | 1e-6–1e-3 |
+| Batch size | 32, 64, 128, 256 |
+| Data augmentation | none, or random horizontal flip + random crop (4 px padding) |
+| Epochs | up to 30; the epoch with the best validation accuracy is kept |
+
+Photos are center-cropped to a square and resized to 32×32 before classification.
+
+### Model API, Postman and logs
+
+| Model | Health check | Prediction |
+|---|---|---|
+| Baseline | `GET` http://localhost:5004/health-check | `POST` http://localhost:5004/predictions |
+| Optimized | `GET` http://localhost:5005/health-check | `POST` http://localhost:5005/predictions |
+
+```bash
+python postman/make_request.py CIFAR10/test-images/car.png
+```
+
+Import `CIFAR10/postman/cifar10-classifier.postman_collection.json` and send `car.json` as in the FashionMNIST section.
+
+```bash
+docker exec -it cifar10-optimized-1 tail -f /tmp/predictions.log
+docker compose -f CIFAR10/compose.yaml logs -f
+```
+
+### Results
+
+| | Baseline | Optimized |
+|---|---|---|
+| Network | conv 6/16, fc 120/84 | conv 32/128, fc 256/256 |
+| Dropout, augmentation | 0, none | 0.07, flip + crop |
+| Optimizer, learning rate | SGD (momentum 0.9), 0.001 | SGD (momentum 0.55), 0.029 |
+| Batch size, epochs | 4, 2 | 32, 24 |
+| **Test accuracy** | **54.06%** | **80.89%** |
+| Weakest class | cat 17.8% | cat 54.7% |
+
+40 Optuna trials (18 completed, 22 pruned) took about 35 minutes; the final model trains in 93 seconds.
+See [`REPORT.md`](REPORT.md) for the comparison of both classifiers.

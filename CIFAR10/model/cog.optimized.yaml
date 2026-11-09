@@ -1,0 +1,7 @@
+# Cog build recipe for the optimized CIFAR10 classifier.
+#   cog build -f cog.optimized.yaml -t cifar10-optimized
+# Same Python and packages as Week 6, so Docker reuses those cached layers.
+build:
+  python_version: "3.13"
+  python_requirements: requirements.txt
+run: "run.py:OptimizedRunner"

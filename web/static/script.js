@@ -115,6 +115,10 @@ function renderDetails(results) {
         ["Epochs", (c) => c.epochs],
         ["Test accuracy", (_, i) => percent(results[MODELS[i]].model.test_accuracy)],
     ];
+    // CIFAR10 only: data augmentation is one of the tuned hyperparameters
+    if (configs.some((config) => "augment" in config)) {
+        rows.splice(rows.length - 1, 0, ["Augmentation", (c) => (c.augment ? "flip + crop" : "none")]);
+    }
     const body = document.getElementById("details-body");
     body.replaceChildren();
     for (const [title, format] of rows) {

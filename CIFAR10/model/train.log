@@ -1,0 +1,4 @@
+Training the baseline on cuda
+Epoch 1: test loss 1.4713, test accuracy 46.78%
+Epoch 2: test loss 1.2834, test accuracy 54.06%
+[baseline] test accuracy 54.06%, test loss 1.2834 -> C:\Users\eraye\Desktop\Eray\Ders\EE471 Software Development\EE471-week7\CIFAR10\model\weights\baseline.pth

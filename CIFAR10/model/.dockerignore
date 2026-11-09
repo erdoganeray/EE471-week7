@@ -1,0 +1,20 @@
+# Only run.py, networks.py and weights/ are needed inside the image
+
+# Training code and the downloaded dataset (~180 MB)
+train.py
+tune.py
+training.py
+export_samples.py
+data/
+
+# Local Python environments and caches
+.venv/
+__pycache__/
+
+# Test images
+*.jpg
+*.jpeg
+*.png
+
+# Training logs
+*.log

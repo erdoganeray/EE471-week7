@@ -1,0 +1,47 @@
+{
+  "name": "baseline",
+  "test_accuracy": 0.5406,
+  "test_loss": 1.2834,
+  "parameters": 62006,
+  "config": {
+    "architecture": {
+      "conv1": 6,
+      "conv2": 16,
+      "fc1": 120,
+      "fc2": 84
+    },
+    "dropout": 0.0,
+    "optimizer": "SGD",
+    "learning_rate": 0.001,
+    "momentum": 0.9,
+    "weight_decay": 0.0,
+    "batch_size": 4,
+    "epochs": 2,
+    "augment": false
+  },
+  "per_class_accuracy": {
+    "plane": 0.547,
+    "car": 0.758,
+    "bird": 0.331,
+    "cat": 0.178,
+    "deer": 0.421,
+    "dog": 0.567,
+    "frog": 0.741,
+    "horse": 0.693,
+    "ship": 0.679,
+    "truck": 0.491
+  },
+  "history": [
+    {
+      "epoch": 1,
+      "loss": 1.4713,
+      "accuracy": 0.4678
+    },
+    {
+      "epoch": 2,
+      "loss": 1.2834,
+      "accuracy": 0.5406
+    }
+  ],
+  "training_seconds": 55.9
+}

@@ -1,0 +1,44 @@
+Tuning on cuda, 40 trials
+[I 2026-11-09 15:01:28,231] A new study created in memory with name: cifar10
+[I 2026-11-09 15:02:03,633] Trial 0 finished with value: 0.6708 and parameters: {'optimizer': 'SGD', 'conv1': 32, 'conv2': 64, 'fc1': 128, 'fc2': 256, 'dropout': 0.18534777074380926, 'sgd_learning_rate': 0.005595492995040761, 'momentum': 0.8083109338722951, 'weight_decay': 2.1761094997057153e-06, 'batch_size': 256, 'augment': False}. Best is trial 0 with value: 0.6708.
+[I 2026-11-09 15:04:27,989] Trial 1 finished with value: 0.722 and parameters: {'optimizer': 'Adam', 'conv1': 32, 'conv2': 32, 'fc1': 128, 'fc2': 128, 'dropout': 0.12044139972636819, 'adam_learning_rate': 0.00015259723921433186, 'weight_decay': 3.101689912196739e-05, 'batch_size': 32, 'augment': True}. Best is trial 1 with value: 0.722.
+[I 2026-11-09 15:05:16,366] Trial 2 finished with value: 0.7006 and parameters: {'optimizer': 'Adam', 'conv1': 64, 'conv2': 32, 'fc1': 512, 'fc2': 64, 'dropout': 0.10935613456751608, 'adam_learning_rate': 0.0002060567235732073, 'weight_decay': 0.00033298918994733776, 'batch_size': 256, 'augment': True}. Best is trial 1 with value: 0.722.
+[I 2026-11-09 15:06:01,250] Trial 3 finished with value: 0.6638 and parameters: {'optimizer': 'SGD', 'conv1': 16, 'conv2': 128, 'fc1': 512, 'fc2': 64, 'dropout': 0.23684735488463815, 'sgd_learning_rate': 0.0030428711781934734, 'momentum': 0.908723295881304, 'weight_decay': 0.0005134583926382535, 'batch_size': 256, 'augment': True}. Best is trial 1 with value: 0.722.
+[I 2026-11-09 15:07:13,642] Trial 4 finished with value: 0.7083 and parameters: {'optimizer': 'Adam', 'conv1': 16, 'conv2': 64, 'fc1': 128, 'fc2': 128, 'dropout': 0.42037524846688124, 'adam_learning_rate': 0.0008784218724951984, 'weight_decay': 0.0001240675087483179, 'batch_size': 64, 'augment': False}. Best is trial 1 with value: 0.722.
+[I 2026-11-09 15:07:43,599] Trial 5 finished with value: 0.7308 and parameters: {'optimizer': 'Adam', 'conv1': 16, 'conv2': 64, 'fc1': 256, 'fc2': 256, 'dropout': 0.13699605446589885, 'adam_learning_rate': 0.0004729572613946843, 'weight_decay': 0.0009998659742831851, 'batch_size': 256, 'augment': True}. Best is trial 5 with value: 0.7308.
+[I 2026-11-09 15:09:10,061] Trial 6 finished with value: 0.7683 and parameters: {'optimizer': 'SGD', 'conv1': 64, 'conv2': 128, 'fc1': 512, 'fc2': 64, 'dropout': 0.3493082188511439, 'sgd_learning_rate': 0.030293432737596125, 'momentum': 0.945796604133047, 'weight_decay': 0.00012292386757806718, 'batch_size': 128, 'augment': True}. Best is trial 6 with value: 0.7683.
+[I 2026-11-09 15:10:12,985] Trial 7 finished with value: 0.7471 and parameters: {'optimizer': 'SGD', 'conv1': 32, 'conv2': 128, 'fc1': 128, 'fc2': 128, 'dropout': 0.322367688299766, 'sgd_learning_rate': 0.051217669617789834, 'momentum': 0.8126303487424381, 'weight_decay': 1.0817264375517717e-06, 'batch_size': 64, 'augment': True}. Best is trial 6 with value: 0.7683.
+[I 2026-11-09 15:11:14,256] Trial 8 pruned. 
+[I 2026-11-09 15:11:21,852] Trial 9 pruned. 
+[I 2026-11-09 15:13:22,495] Trial 10 finished with value: 0.8008 and parameters: {'optimizer': 'SGD', 'conv1': 64, 'conv2': 128, 'fc1': 256, 'fc2': 64, 'dropout': 0.44624920456029676, 'sgd_learning_rate': 0.01304661935072202, 'momentum': 0.6878459896140033, 'weight_decay': 0.00015852459581066714, 'batch_size': 32, 'augment': True}. Best is trial 10 with value: 0.8008.
+[I 2026-11-09 15:15:21,427] Trial 11 finished with value: 0.8031 and parameters: {'optimizer': 'SGD', 'conv1': 64, 'conv2': 128, 'fc1': 256, 'fc2': 128, 'dropout': 0.46853433584747556, 'sgd_learning_rate': 0.01235777256297284, 'momentum': 0.6884439764892272, 'weight_decay': 5.239980387838359e-05, 'batch_size': 32, 'augment': True}. Best is trial 11 with value: 0.8031.
+[I 2026-11-09 15:16:53,841] Trial 12 finished with value: 0.7974 and parameters: {'optimizer': 'SGD', 'conv1': 32, 'conv2': 128, 'fc1': 256, 'fc2': 128, 'dropout': 0.49720204691574105, 'sgd_learning_rate': 0.01314492010889637, 'momentum': 0.678627701294976, 'weight_decay': 0.0001887878578519913, 'batch_size': 32, 'augment': True}. Best is trial 11 with value: 0.8031.
+[I 2026-11-09 15:17:16,219] Trial 13 pruned. 
+[I 2026-11-09 15:17:30,594] Trial 14 pruned. 
+[I 2026-11-09 15:17:51,758] Trial 15 pruned. 
+[I 2026-11-09 15:19:35,569] Trial 16 finished with value: 0.8025 and parameters: {'optimizer': 'SGD', 'conv1': 32, 'conv2': 128, 'fc1': 256, 'fc2': 128, 'dropout': 0.3414535912581585, 'sgd_learning_rate': 0.014755007733814758, 'momentum': 0.7553546016180436, 'weight_decay': 4.478892491984438e-05, 'batch_size': 32, 'augment': True}. Best is trial 11 with value: 0.8031.
+[I 2026-11-09 15:20:08,170] Trial 17 pruned. 
+[I 2026-11-09 15:20:28,124] Trial 18 pruned. 
+[I 2026-11-09 15:22:02,645] Trial 19 finished with value: 0.8083 and parameters: {'optimizer': 'SGD', 'conv1': 32, 'conv2': 128, 'fc1': 256, 'fc2': 128, 'dropout': 0.18672954823627805, 'sgd_learning_rate': 0.025340598297889105, 'momentum': 0.602425729834887, 'weight_decay': 1.3331058894245842e-05, 'batch_size': 32, 'augment': True}. Best is trial 19 with value: 0.8083.
+[I 2026-11-09 15:23:37,481] Trial 20 finished with value: 0.8053 and parameters: {'optimizer': 'SGD', 'conv1': 32, 'conv2': 128, 'fc1': 256, 'fc2': 128, 'dropout': 0.04315217967534929, 'sgd_learning_rate': 0.027931594650353147, 'momentum': 0.5766839518754105, 'weight_decay': 1.971252096823617e-05, 'batch_size': 32, 'augment': True}. Best is trial 19 with value: 0.8083.
+[I 2026-11-09 15:25:13,505] Trial 21 finished with value: 0.804 and parameters: {'optimizer': 'SGD', 'conv1': 32, 'conv2': 128, 'fc1': 256, 'fc2': 128, 'dropout': 0.07080322449502427, 'sgd_learning_rate': 0.028414262889763942, 'momentum': 0.5390825980111233, 'weight_decay': 1.5146450163922806e-05, 'batch_size': 32, 'augment': True}. Best is trial 19 with value: 0.8083.
+[I 2026-11-09 15:26:46,151] Trial 22 finished with value: 0.8037 and parameters: {'optimizer': 'SGD', 'conv1': 32, 'conv2': 128, 'fc1': 256, 'fc2': 128, 'dropout': 0.150464267999958, 'sgd_learning_rate': 0.03426212946592313, 'momentum': 0.5260519199607077, 'weight_decay': 2.3381501586420983e-05, 'batch_size': 32, 'augment': True}. Best is trial 19 with value: 0.8083.
+[I 2026-11-09 15:27:34,588] Trial 23 pruned. 
+[I 2026-11-09 15:27:43,665] Trial 24 pruned. 
+[I 2026-11-09 15:27:50,798] Trial 25 pruned. 
+[I 2026-11-09 15:28:42,190] Trial 26 pruned. 
+[I 2026-11-09 15:30:14,604] Trial 27 finished with value: 0.8055 and parameters: {'optimizer': 'SGD', 'conv1': 32, 'conv2': 128, 'fc1': 256, 'fc2': 128, 'dropout': 0.20256387195181141, 'sgd_learning_rate': 0.020585070814704585, 'momentum': 0.503341044150057, 'weight_decay': 3.5150201273417232e-06, 'batch_size': 32, 'augment': True}. Best is trial 19 with value: 0.8083.
+[I 2026-11-09 15:31:30,848] Trial 28 pruned. 
+[I 2026-11-09 15:31:47,495] Trial 29 pruned. 
+[I 2026-11-09 15:31:59,289] Trial 30 pruned. 
+[I 2026-11-09 15:32:36,798] Trial 31 pruned. 
+[I 2026-11-09 15:32:53,603] Trial 32 pruned. 
+[I 2026-11-09 15:33:00,528] Trial 33 pruned. 
+[I 2026-11-09 15:34:40,370] Trial 34 finished with value: 0.8095 and parameters: {'optimizer': 'SGD', 'conv1': 32, 'conv2': 128, 'fc1': 256, 'fc2': 256, 'dropout': 0.06583026431785466, 'sgd_learning_rate': 0.02878671656713909, 'momentum': 0.5540693862176216, 'weight_decay': 6.1033489018070216e-06, 'batch_size': 32, 'augment': True}. Best is trial 34 with value: 0.8095.
+[I 2026-11-09 15:35:56,206] Trial 35 pruned. 
+[I 2026-11-09 15:36:05,706] Trial 36 pruned. 
+[I 2026-11-09 15:36:17,298] Trial 37 pruned. 
+[I 2026-11-09 15:36:36,527] Trial 38 pruned. 
+[I 2026-11-09 15:36:56,756] Trial 39 pruned. 
+Best validation accuracy 80.95% with {'architecture': {'conv1': 32, 'conv2': 128, 'fc1': 256, 'fc2': 256}, 'dropout': 0.06583026431785466, 'optimizer': 'SGD', 'learning_rate': 0.02878671656713909, 'momentum': 0.5540693862176216, 'weight_decay': 6.1033489018070216e-06, 'batch_size': 32, 'augment': True, 'epochs': 24}
+[optimized] test accuracy 80.89%, test loss 0.5747 -> C:\Users\eraye\Desktop\Eray\Ders\EE471 Software Development\EE471-week7\CIFAR10\model\weights\optimized.pth
