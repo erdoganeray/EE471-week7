@@ -106,7 +106,7 @@ function renderDetails(results) {
     if (configs.some((config) => !config)) return;
 
     const rows = [
-        ["Hidden layers", (c) => describeLayers(c)],
+        ["Layers", (c) => describeLayers(c)],
         ["Dropout", (c) => c.dropout.toFixed(2)],
         ["Optimizer", (c) => c.optimizer + (c.optimizer === "SGD" && c.momentum ? ` (momentum ${c.momentum.toFixed(2)})` : "")],
         ["Learning rate", (c) => c.learning_rate.toPrecision(3)],
