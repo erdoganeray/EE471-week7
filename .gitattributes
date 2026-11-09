@@ -1,0 +1,4 @@
+# Keep LF line endings: these files run inside Linux containers
+* text=auto eol=lf
+*.pth binary
+*.png binary

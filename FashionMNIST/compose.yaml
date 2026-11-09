@@ -1,0 +1,48 @@
+# Garment classifier: two Cog model containers (baseline + optimized) and the website.
+# 1) Build the model images with Cog (in WSL / Linux / macOS), from FashionMNIST/model:
+#      cog build -f cog.baseline.yaml  -t fashion-baseline
+#      cog build -f cog.optimized.yaml -t fashion-optimized
+# 2) Start everything (from the repository root):
+#      docker compose -f FashionMNIST/compose.yaml up --build
+
+name: fashion
+
+x-cog-model: &cog-model
+  pull_policy: never                   # built by `cog build`, it only exists locally
+  healthcheck:
+    # Cog answers {"status": "READY"} once setup() has loaded the model
+    test: ["CMD-SHELL", "curl -fs http://localhost:5000/health-check | grep -q READY"]
+    interval: 5s
+    timeout: 3s
+    retries: 30
+  restart: unless-stopped
+
+services:
+  baseline:
+    <<: *cog-model
+    image: fashion-baseline
+    ports:
+      - "5002:5000"                    # Postman: http://localhost:5002/predictions
+
+  optimized:
+    <<: *cog-model
+    image: fashion-optimized
+    ports:
+      - "5003:5000"                    # Postman: http://localhost:5003/predictions
+
+  web:
+    build: ../web
+    image: classifier-web
+    ports:
+      - "8000:5000"                    # http://localhost:8000
+    environment:
+      CLASSIFIER: fashion
+      # Containers in the same Compose project reach each other by service name
+      BASELINE_URL: http://baseline:5000
+      OPTIMIZED_URL: http://optimized:5000
+    depends_on:
+      baseline:
+        condition: service_healthy     # start the website only after both models are READY
+      optimized:
+        condition: service_healthy
+    restart: unless-stopped

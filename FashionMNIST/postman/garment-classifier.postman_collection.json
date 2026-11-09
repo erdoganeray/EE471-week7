@@ -1,0 +1,102 @@
+{
+  "info": {
+    "name": "Garment classifier (Cog)",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "baseline: health check",
+      "request": {
+        "method": "GET",
+        "url": "http://localhost:5002/health-check"
+      }
+    },
+    {
+      "name": "baseline: classify (JSON body file)",
+      "request": {
+        "method": "POST",
+        "url": "http://localhost:5002/predictions",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "file",
+          "file": {}
+        },
+        "description": "Body -> binary: choose the .json file made by postman/make_request.py"
+      }
+    },
+    {
+      "name": "baseline: classify (image URL)",
+      "request": {
+        "method": "POST",
+        "url": "http://localhost:5002/predictions",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"input\": {\n    \"image\": \"https://raw.githubusercontent.com/erdoganeray/EE471-week7/main/FashionMNIST/test-images/sneaker.png\"\n  }\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "optimized: health check",
+      "request": {
+        "method": "GET",
+        "url": "http://localhost:5003/health-check"
+      }
+    },
+    {
+      "name": "optimized: classify (JSON body file)",
+      "request": {
+        "method": "POST",
+        "url": "http://localhost:5003/predictions",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "file",
+          "file": {}
+        },
+        "description": "Body -> binary: choose the .json file made by postman/make_request.py"
+      }
+    },
+    {
+      "name": "optimized: classify (image URL)",
+      "request": {
+        "method": "POST",
+        "url": "http://localhost:5003/predictions",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"input\": {\n    \"image\": \"https://raw.githubusercontent.com/erdoganeray/EE471-week7/main/FashionMNIST/test-images/sneaker.png\"\n  }\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    }
+  ]
+}

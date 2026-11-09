@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ site.title }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <main>
+        <header class="card">
+            <h1>{{ site.icon }} {{ site.title }}</h1>
+            <p class="subtitle">{{ site.subtitle }}</p>
+            <p class="classes">Classes: {{ site.examples }}</p>
+
+            <label class="dropzone" id="dropzone">
+                <input type="file" id="file-input" accept="image/jpeg,image/png,image/webp,image/gif,image/bmp" hidden>
+                <img id="preview" alt="Selected image" hidden>
+                <span id="dropzone-text">Drop a {{ site.subject }} image here or <u>choose a file</u><br><small>JPEG, PNG, WebP, GIF or BMP · max 10 MB</small></span>
+            </label>
+
+            <button id="classify-button" disabled>Classify with both models</button>
+            <p class="error" id="error" hidden></p>
+            <p class="verdict" id="verdict" hidden></p>
+        </header>
+
+        <section class="compare">
+            {% for name, title in [("baseline", "Baseline"), ("optimized", "Optimized")] %}
+            <article class="card model {{ name }}" id="{{ name }}">
+                <div class="model-head">
+                    <h2>{{ title }}</h2>
+                    <p class="status" data-status><span class="dot"></span><span data-status-text>Checking…</span></p>
+                </div>
+                <p class="model-meta" data-meta>{{ "Quickstart hyperparameters" if name == "baseline" else "Hyperparameters found by Optuna" }}</p>
+
+                <div class="prediction" data-prediction hidden>
+                    <div class="prediction-top">
+                        <figure>
+                            <img data-model-input alt="Image as the model sees it">
+                            <figcaption>Model input</figcaption>
+                        </figure>
+                        <div>
+                            <p class="label" data-label></p>
+                            <p class="confidence" data-confidence></p>
+                        </div>
+                    </div>
+                    <ul class="bars" data-bars></ul>
+                </div>
+                <p class="error" data-error hidden></p>
+            </article>
+            {% endfor %}
+        </section>
+
+        <section class="card" id="details" hidden>
+            <h2>Hyperparameters</h2>
+            <table>
+                <thead><tr><th></th><th>Baseline</th><th>Optimized</th></tr></thead>
+                <tbody id="details-body"></tbody>
+            </table>
+        </section>
+    </main>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

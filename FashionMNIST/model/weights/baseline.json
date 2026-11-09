@@ -1,0 +1,59 @@
+{
+  "name": "baseline",
+  "test_accuracy": 0.6504,
+  "test_loss": 1.0569,
+  "parameters": 669706,
+  "config": {
+    "hidden_sizes": [
+      512,
+      512
+    ],
+    "dropout": 0.0,
+    "optimizer": "SGD",
+    "learning_rate": 0.001,
+    "momentum": 0.0,
+    "weight_decay": 0.0,
+    "batch_size": 64,
+    "epochs": 5
+  },
+  "per_class_accuracy": {
+    "T-shirt/top": 0.789,
+    "Trouser": 0.906,
+    "Pullover": 0.604,
+    "Dress": 0.774,
+    "Coat": 0.596,
+    "Sandal": 0.031,
+    "Shirt": 0.066,
+    "Sneaker": 0.9,
+    "Bag": 0.907,
+    "Ankle boot": 0.931
+  },
+  "history": [
+    {
+      "epoch": 1,
+      "loss": 2.1309,
+      "accuracy": 0.5311
+    },
+    {
+      "epoch": 2,
+      "loss": 1.8286,
+      "accuracy": 0.5896
+    },
+    {
+      "epoch": 3,
+      "loss": 1.458,
+      "accuracy": 0.606
+    },
+    {
+      "epoch": 4,
+      "loss": 1.2083,
+      "accuracy": 0.6366
+    },
+    {
+      "epoch": 5,
+      "loss": 1.0569,
+      "accuracy": 0.6504
+    }
+  ],
+  "training_seconds": 9.4
+}

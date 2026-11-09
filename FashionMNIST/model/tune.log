@@ -1,0 +1,44 @@
+Tuning on cuda, 40 trials
+[I 2026-11-09 14:03:52,331] A new study created in memory with name: fashion-mnist
+[I 2026-11-09 14:04:04,187] Trial 0 finished with value: 0.8822 and parameters: {'n_layers': 2, 'optimizer': 'Adam', 'hidden_size_1': 128, 'hidden_size_2': 256, 'dropout': 0.033757924694255925, 'adam_learning_rate': 0.00315087790977363, 'weight_decay': 0.0003355065875576435, 'batch_size': 128}. Best is trial 0 with value: 0.8822.
+[I 2026-11-09 14:04:44,242] Trial 1 finished with value: 0.8853 and parameters: {'n_layers': 2, 'optimizer': 'Adam', 'hidden_size_1': 128, 'hidden_size_2': 512, 'dropout': 0.45134569930675533, 'adam_learning_rate': 0.00017788341926654102, 'weight_decay': 2.2409952849068536e-05, 'batch_size': 32}. Best is trial 1 with value: 0.8853.
+[I 2026-11-09 14:05:35,871] Trial 2 finished with value: 0.8208 and parameters: {'n_layers': 3, 'optimizer': 'Adam', 'hidden_size_1': 512, 'hidden_size_2': 128, 'hidden_size_3': 256, 'dropout': 0.3870807585361496, 'adam_learning_rate': 0.0046655963717484265, 'weight_decay': 0.00031207344912844494, 'batch_size': 32}. Best is trial 1 with value: 0.8853.
+[I 2026-11-09 14:06:04,546] Trial 3 finished with value: 0.8963 and parameters: {'n_layers': 3, 'optimizer': 'Adam', 'hidden_size_1': 512, 'hidden_size_2': 512, 'hidden_size_3': 1024, 'dropout': 0.14835376709714004, 'adam_learning_rate': 0.0005187613124327763, 'weight_decay': 1.0622642190712025e-06, 'batch_size': 64}. Best is trial 3 with value: 0.8963.
+[I 2026-11-09 14:06:28,168] Trial 4 finished with value: 0.8793 and parameters: {'n_layers': 3, 'optimizer': 'SGD', 'hidden_size_1': 1024, 'hidden_size_2': 128, 'hidden_size_3': 512, 'dropout': 0.47835265859252546, 'sgd_learning_rate': 0.028309989770250243, 'momentum': 0.4353348121457924, 'weight_decay': 4.468127145162878e-05, 'batch_size': 64}. Best is trial 3 with value: 0.8963.
+[I 2026-11-09 14:06:30,705] Trial 5 pruned. 
+[I 2026-11-09 14:06:32,120] Trial 6 pruned. 
+[I 2026-11-09 14:06:35,116] Trial 7 pruned. 
+[I 2026-11-09 14:06:45,296] Trial 8 pruned. 
+[I 2026-11-09 14:07:03,083] Trial 9 finished with value: 0.8901 and parameters: {'n_layers': 1, 'optimizer': 'Adam', 'hidden_size_1': 256, 'dropout': 0.44385113946353755, 'adam_learning_rate': 0.001363035246102486, 'weight_decay': 1.5474969762771867e-05, 'batch_size': 64}. Best is trial 3 with value: 0.8963.
+[I 2026-11-09 14:07:28,675] Trial 10 finished with value: 0.8922 and parameters: {'n_layers': 3, 'optimizer': 'Adam', 'hidden_size_1': 128, 'hidden_size_2': 1024, 'hidden_size_3': 1024, 'dropout': 0.05244405013158203, 'adam_learning_rate': 0.00011849161603358622, 'weight_decay': 9.071123179541948e-06, 'batch_size': 64}. Best is trial 3 with value: 0.8963.
+[I 2026-11-09 14:07:53,456] Trial 11 finished with value: 0.896 and parameters: {'n_layers': 3, 'optimizer': 'Adam', 'hidden_size_1': 512, 'hidden_size_2': 1024, 'hidden_size_3': 1024, 'dropout': 0.1546059320677482, 'adam_learning_rate': 0.00010015364505302667, 'weight_decay': 1.0579153267414617e-06, 'batch_size': 64}. Best is trial 3 with value: 0.8963.
+[I 2026-11-09 14:08:20,119] Trial 12 finished with value: 0.8988 and parameters: {'n_layers': 2, 'optimizer': 'Adam', 'hidden_size_1': 512, 'hidden_size_2': 1024, 'dropout': 0.07089774429814098, 'adam_learning_rate': 0.00038486487978253226, 'weight_decay': 1.032507520396144e-06, 'batch_size': 64}. Best is trial 12 with value: 0.8988.
+[I 2026-11-09 14:08:43,559] Trial 13 finished with value: 0.8951 and parameters: {'n_layers': 2, 'optimizer': 'Adam', 'hidden_size_1': 256, 'hidden_size_2': 1024, 'dropout': 0.17319308974790398, 'adam_learning_rate': 0.000372373499723555, 'weight_decay': 1.1401584569000553e-06, 'batch_size': 64}. Best is trial 12 with value: 0.8988.
+[I 2026-11-09 14:09:00,279] Trial 14 finished with value: 0.8965 and parameters: {'n_layers': 1, 'optimizer': 'Adam', 'hidden_size_1': 512, 'dropout': 0.12635518318157796, 'adam_learning_rate': 0.00048673490658888367, 'weight_decay': 1.2176542102348089e-06, 'batch_size': 64}. Best is trial 12 with value: 0.8988.
+[I 2026-11-09 14:09:01,375] Trial 15 pruned. 
+[I 2026-11-09 14:09:06,297] Trial 16 pruned. 
+[I 2026-11-09 14:09:29,374] Trial 17 finished with value: 0.893 and parameters: {'n_layers': 2, 'optimizer': 'Adam', 'hidden_size_1': 256, 'hidden_size_2': 256, 'dropout': 0.056198461821116964, 'adam_learning_rate': 0.00028081481739514473, 'weight_decay': 2.4593901513524196e-06, 'batch_size': 64}. Best is trial 12 with value: 0.8988.
+[I 2026-11-09 14:09:47,612] Trial 18 finished with value: 0.8939 and parameters: {'n_layers': 1, 'optimizer': 'Adam', 'hidden_size_1': 1024, 'dropout': 0.06190665174667516, 'adam_learning_rate': 0.0006810471814616747, 'weight_decay': 4.988123921010393e-05, 'batch_size': 64}. Best is trial 12 with value: 0.8988.
+[I 2026-11-09 14:10:12,697] Trial 19 finished with value: 0.8946 and parameters: {'n_layers': 2, 'optimizer': 'Adam', 'hidden_size_1': 512, 'hidden_size_2': 1024, 'dropout': 0.256418941033066, 'adam_learning_rate': 0.00022188369912356728, 'weight_decay': 1.2365078323413928e-06, 'batch_size': 64}. Best is trial 12 with value: 0.8988.
+[I 2026-11-09 14:10:16,884] Trial 20 pruned. 
+[I 2026-11-09 14:10:42,540] Trial 21 finished with value: 0.8949 and parameters: {'n_layers': 3, 'optimizer': 'Adam', 'hidden_size_1': 1024, 'hidden_size_2': 512, 'hidden_size_3': 1024, 'dropout': 0.20740698799259755, 'adam_learning_rate': 0.0005928837292550394, 'weight_decay': 8.225884462917043e-06, 'batch_size': 64}. Best is trial 12 with value: 0.8988.
+[I 2026-11-09 14:10:46,032] Trial 22 pruned. 
+[I 2026-11-09 14:10:50,941] Trial 23 pruned. 
+[I 2026-11-09 14:11:16,321] Trial 24 pruned. 
+[I 2026-11-09 14:11:19,912] Trial 25 pruned. 
+[I 2026-11-09 14:11:27,887] Trial 26 pruned. 
+[I 2026-11-09 14:12:13,455] Trial 27 finished with value: 0.8962 and parameters: {'n_layers': 3, 'optimizer': 'Adam', 'hidden_size_1': 512, 'hidden_size_2': 1024, 'hidden_size_3': 1024, 'dropout': 0.08186470624802722, 'adam_learning_rate': 0.00019377897462274522, 'weight_decay': 3.789690020341714e-06, 'batch_size': 32}. Best is trial 12 with value: 0.8988.
+[I 2026-11-09 14:12:31,108] Trial 28 pruned. 
+[I 2026-11-09 14:12:36,345] Trial 29 pruned. 
+[I 2026-11-09 14:12:59,465] Trial 30 finished with value: 0.8976 and parameters: {'n_layers': 2, 'optimizer': 'Adam', 'hidden_size_1': 512, 'hidden_size_2': 512, 'dropout': 0.0011006154546915475, 'adam_learning_rate': 0.0004791040662122038, 'weight_decay': 1.3436752146328651e-06, 'batch_size': 64}. Best is trial 12 with value: 0.8988.
+[I 2026-11-09 14:13:02,217] Trial 31 pruned. 
+[I 2026-11-09 14:13:03,606] Trial 32 pruned. 
+[I 2026-11-09 14:13:27,249] Trial 33 finished with value: 0.8959 and parameters: {'n_layers': 2, 'optimizer': 'Adam', 'hidden_size_1': 512, 'hidden_size_2': 512, 'dropout': 0.024729054273446488, 'adam_learning_rate': 0.0006417084034792518, 'weight_decay': 2.6641762445316246e-06, 'batch_size': 64}. Best is trial 12 with value: 0.8988.
+[I 2026-11-09 14:13:33,536] Trial 34 pruned. 
+[I 2026-11-09 14:13:39,675] Trial 35 pruned. 
+[I 2026-11-09 14:13:45,167] Trial 36 pruned. 
+[I 2026-11-09 14:13:48,570] Trial 37 pruned. 
+[I 2026-11-09 14:13:56,479] Trial 38 pruned. 
+[I 2026-11-09 14:14:00,123] Trial 39 pruned. 
+Best validation accuracy 89.88% with {'hidden_sizes': [512, 1024], 'dropout': 0.07089774429814098, 'optimizer': 'Adam', 'learning_rate': 0.00038486487978253226, 'momentum': 0.0, 'weight_decay': 1.032507520396144e-06, 'batch_size': 64, 'epochs': 15}
+[optimized] test accuracy 89.55%, test loss 0.3263 -> C:\Users\eraye\Desktop\Eray\Ders\EE471 Software Development\EE471-week7\FashionMNIST\model\weights\optimized.pth
